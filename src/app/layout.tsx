@@ -10,6 +10,8 @@ import Nav from '@/components/Nav';
 import RevealObserver from '@/components/RevealObserver';
 import SmoothScroll from '@/components/SmoothScroll';
 import { site } from '@/lib/site';
+import { Analytics } from '@vercel/analytics/next';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 import './globals.css';
 
 // Self-hosted at build time by next/font: no request to Google at runtime, no layout shift
@@ -56,6 +58,8 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <SmoothScroll />
         <RevealObserver />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(orgJsonLd) }} />
+        <Analytics />
+        <SpeedInsights />
         {process.env.NEXT_PUBLIC_PLAUSIBLE_DOMAIN ? (
           // Non-critical: loaded only after the page is idle
           <Script
