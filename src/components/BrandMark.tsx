@@ -1,10 +1,27 @@
 export default function BrandMark() {
   return (
-    <svg className="brand-mark" viewBox="0 0 28 28" aria-hidden="true">
-      <rect width="28" height="28" fill="#0B54F7" />
-      <rect x="6" y="7" width="16" height="3.4" fill="#fff" />
-      <rect x="6" y="12.3" width="11" height="3.4" fill="#fff" />
-      <rect x="6" y="17.6" width="6" height="3.4" fill="#fff" />
+    <svg className="brand-mark" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <defs>
+        <linearGradient id="fm-bg" x1="0" y1="0" x2="32" y2="32" gradientUnits="userSpaceOnUse">
+          <stop stopColor="#0B54F7" />
+          <stop offset="1" stopColor="#0533AC" />
+        </linearGradient>
+        <linearGradient id="fm-glow" x1="8" y1="6" x2="26" y2="26" gradientUnits="userSpaceOnUse">
+          <stop stopColor="#FFFFFF" />
+          <stop offset="1" stopColor="#DBEAFE" />
+        </linearGradient>
+      </defs>
+      {/* Squircle container */}
+      <rect width="32" height="32" rx="9" fill="url(#fm-bg)" />
+      
+      {/* Dynamic F - Stem & Top Bar */}
+      <path
+        d="M8.5 7.5C8.5 6.67157 9.17157 6 10 6H23.5C24.3284 6 25 6.67157 25 7.5V8.5C25 9.32843 24.3284 10 23.5 10H13V13.5H20.5C21.3284 13.5 22 14.1716 22 15V16C22 16.8284 21.3284 17.5 20.5 17.5H13V24.5C13 25.3284 12.3284 26 11.5 26H10C9.17157 26 8.5 25.3284 8.5 24.5V7.5Z"
+        fill="url(#fm-glow)"
+      />
+      
+      {/* AI Automation Flow Node / Glowing Pulse */}
+      <circle cx="21.5" cy="22.5" r="2.5" fill="#38BDF8" />
     </svg>
   );
 }
