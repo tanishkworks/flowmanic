@@ -1,5 +1,6 @@
 'use client';
 
+import { usePathname } from 'next/navigation';
 import { useEffect, useRef, type CSSProperties, type ReactNode } from 'react';
 
 /** "Automation artifact" tiles that spawn under the cursor (desktop) or drift along a path (touch). */
@@ -95,9 +96,13 @@ const TILES: { cls: string; body: ReactNode }[] = [
 ];
 
 export default function TrailLayer() {
+  const pathname = usePathname();
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    // Only run mouse/touch trail card animation on the home page ('/')
+    if (pathname !== '/') return;
+
     const layer = ref.current;
     const zone = layer?.parentElement;
     if (!layer || !zone) return;
@@ -176,7 +181,12 @@ export default function TrailLayer() {
       io.disconnect();
       window.clearInterval(timer);
     };
-  }, []);
+  }, [pathname]);
+
+  // If not on the Home Page ("/"), do not render the card trail animation at all
+  if (pathname !== '/') {
+    return null;
+  }
 
   return (
     <div className="trail" ref={ref} aria-hidden="true">
