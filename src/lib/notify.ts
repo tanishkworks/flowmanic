@@ -1,3 +1,4 @@
+import { Resend } from 'resend';
 import type { LeadInput } from './validation';
 
 async function post(url: string, payload: unknown) {
@@ -10,7 +11,7 @@ async function post(url: string, payload: unknown) {
   if (!res.ok) throw new Error(`${res.status} ${res.statusText}`);
 }
 
-/** Forward a new lead to Webhook, Discord, Telegram, Resend Email, or Slack. Never throws. */
+/** Forward a new lead to Resend Email, Discord, Telegram, Webhook, or Slack. Never throws. */
 export async function notifyLead(lead: LeadInput, id: string | null): Promise<void> {
   const jobs: Promise<void>[] = [];
   const hook = process.env.LEAD_WEBHOOK_URL;
@@ -19,14 +20,42 @@ export async function notifyLead(lead: LeadInput, id: string | null): Promise<vo
   const telegramToken = process.env.TELEGRAM_BOT_TOKEN;
   const telegramChatId = process.env.TELEGRAM_CHAT_ID;
   const resendApiKey = process.env.RESEND_API_KEY;
-  const notifyEmail = process.env.NOTIFICATION_EMAIL || process.env.NEXT_PUBLIC_CONTACT_EMAIL || 'hello@flowmanic.ai';
+  const notifyEmail = process.env.NOTIFICATION_EMAIL || 'tanishkproductivity@gmail.com';
 
-  // 1. Generic JSON Webhook
+  // 1. Resend Email via Resend SDK
+  if (resendApiKey) {
+    const resend = new Resend(resendApiKey);
+    jobs.push(
+      resend.emails
+        .send({
+          from: 'Flowmanic Audits <onboarding@resend.dev>',
+          to: [notifyEmail],
+          subject: `⚡ New Free Audit Request: ${lead.name} (${lead.agency})`,
+          html: `
+            <div style="font-family: sans-serif; max-width: 600px; margin: 0 auto; border: 1px solid #eee; padding: 24px; border-radius: 8px;">
+              <h2 style="color: #0B54F7; margin-top: 0;">⚡ New Free Audit Request</h2>
+              <p><strong>Name:</strong> ${lead.name}</p>
+              <p><strong>Email:</strong> <a href="mailto:${lead.email}">${lead.email}</a></p>
+              <p><strong>Agency:</strong> ${lead.agency}</p>
+              ${lead.website ? `<p><strong>Website:</strong> <a href="${lead.website}">${lead.website}</a></p>` : ''}
+              <p><strong>Team Size:</strong> ${lead.teamSize}</p>
+              <p><strong>Automate First:</strong> ${lead.interest}</p>
+              ${lead.message ? `<p><strong>Message / Team's Time:</strong><br/>${lead.message}</p>` : ''}
+            </div>
+          `,
+        })
+        .then((res) => {
+          if (res.error) throw new Error(res.error.message);
+        })
+    );
+  }
+
+  // 2. Generic JSON Webhook
   if (hook) {
     jobs.push(post(hook, { event: 'lead.created', id, lead, receivedAt: new Date().toISOString() }));
   }
 
-  // 2. Slack Notification
+  // 3. Slack Notification
   if (slack) {
     const lines = [
       `*New audit request* from ${lead.name} (${lead.agency})`,
@@ -37,13 +66,13 @@ export async function notifyLead(lead: LeadInput, id: string | null): Promise<vo
     jobs.push(post(slack, { text: lines.join('\n') }));
   }
 
-  // 3. Discord Webhook (100% Free)
+  // 4. Discord Webhook
   if (discord) {
     const discordPayload = {
       embeds: [
         {
           title: '⚡ New Free Audit Booked!',
-          color: 742647, // #0B54F7 Blue
+          color: 742647,
           fields: [
             { name: 'Name', value: lead.name, inline: true },
             { name: 'Email', value: lead.email, inline: true },
@@ -60,9 +89,10 @@ export async function notifyLead(lead: LeadInput, id: string | null): Promise<vo
     jobs.push(post(discord, discordPayload));
   }
 
-  // 4. Telegram Bot Notification (100% Free)
+  // 5. Telegram Bot Notification
   if (telegramToken && telegramChatId) {
-    const text = `⚡ *New Audit Request*\n\n` +
+    const text =
+      `⚡ *New Audit Request*\n\n` +
       `*Name:* ${escapeMarkdown(lead.name)}\n` +
       `*Email:* ${escapeMarkdown(lead.email)}\n` +
       `*Agency:* ${escapeMarkdown(lead.agency)}\n` +
@@ -76,27 +106,6 @@ export async function notifyLead(lead: LeadInput, id: string | null): Promise<vo
         chat_id: telegramChatId,
         text,
         parse_mode: 'Markdown',
-      })
-    );
-  }
-
-  // 5. Resend Direct Email (100% Free for 3,000 emails/month)
-  if (resendApiKey) {
-    jobs.push(
-      post('https://api.resend.com/emails', {
-        from: 'Flowmanic Audits <onboarding@resend.dev>',
-        to: [notifyEmail],
-        subject: `⚡ New Audit Request: ${lead.name} (${lead.agency})`,
-        html: `
-          <h2>New Free Audit Request</h2>
-          <p><strong>Name:</strong> ${lead.name}</p>
-          <p><strong>Email:</strong> <a href="mailto:${lead.email}">${lead.email}</a></p>
-          <p><strong>Agency:</strong> ${lead.agency}</p>
-          ${lead.website ? `<p><strong>Website:</strong> <a href="${lead.website}">${lead.website}</a></p>` : ''}
-          <p><strong>Team Size:</strong> ${lead.teamSize}</p>
-          <p><strong>Automate First:</strong> ${lead.interest}</p>
-          ${lead.message ? `<p><strong>Message:</strong><br/>${lead.message}</p>` : ''}
-        `,
       })
     );
   }
