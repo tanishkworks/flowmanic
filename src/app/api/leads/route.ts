@@ -36,7 +36,13 @@ export async function POST(req: Request) {
   const result = validateLead(body, INTEREST_OPTIONS);
   if (!result.ok) return jsonError(422, 'Please fix the highlighted fields.', { errors: result.errors });
 
-  const hasWebhook = Boolean(process.env.LEAD_WEBHOOK_URL || process.env.SLACK_WEBHOOK_URL);
+  const hasWebhook = Boolean(
+    process.env.LEAD_WEBHOOK_URL ||
+      process.env.SLACK_WEBHOOK_URL ||
+      process.env.DISCORD_WEBHOOK_URL ||
+      (process.env.TELEGRAM_BOT_TOKEN && process.env.TELEGRAM_CHAT_ID) ||
+      process.env.RESEND_API_KEY
+  );
   if (!hasDb() && !hasWebhook) {
     return jsonError(503, `The form isn't connected yet. Please email ${site.email}.`);
   }
