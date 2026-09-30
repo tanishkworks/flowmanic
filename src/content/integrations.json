@@ -1,0 +1,20 @@
+[
+  { "slug": "n8n", "name": "n8n", "category": "Automation platforms", "description": "Our default build platform. Self-hostable, so your workflows run on infrastructure you control." },
+  { "slug": "make", "name": "Make", "category": "Automation platforms", "description": "Visual scenario builder. We build here when your team already runs on Make." },
+  { "slug": "zapier", "name": "Zapier", "category": "Automation platforms", "description": "Already on Zapier? We build inside your existing account so nothing moves." },
+  { "slug": "claude-ai", "name": "Claude AI", "category": "AI models", "description": "Writes report summaries, personalized follow-up emails and repurposed content." },
+  { "slug": "openai", "name": "OpenAI", "category": "AI models", "description": "Available as an alternative model where a workflow calls for it." },
+  { "slug": "ai-transcript", "name": "AI Transcript", "category": "AI models", "description": "Turns a YouTube video into a clean transcript for the content pipeline." },
+  { "slug": "gmail", "name": "Gmail", "category": "Communication", "description": "Sends client reports, lead follow-ups and welcome emails from your own inbox." },
+  { "slug": "slack", "name": "Slack", "category": "Communication", "description": "Pings your team when reports go out, leads reply or new clients sign." },
+  { "slug": "twilio", "name": "Twilio", "category": "Communication", "description": "SMS notifications for workflows that need more than email." },
+  { "slug": "google-sheets", "name": "Google Sheets", "category": "Google Workspace", "description": "Lead lists, tracking sheets and content outputs, kept where your team already works." },
+  { "slug": "google-drive", "name": "Google Drive", "category": "Google Workspace", "description": "Client folders created automatically the moment a deal is signed." },
+  { "slug": "google-docs", "name": "Google Docs", "category": "Google Workspace", "description": "Onboarding checklists and documents generated from your own templates." },
+  { "slug": "meta-ads-api", "name": "Meta Ads API", "category": "Ad platforms", "description": "Pulls campaign spend, results and ROAS for weekly client reporting." },
+  { "slug": "google-ads-api", "name": "Google Ads API", "category": "Ad platforms", "description": "Pulls campaign performance into the same weekly client report." },
+  { "slug": "youtube", "name": "YouTube", "category": "Content", "description": "Drop a video URL to start the content repurposing pipeline." },
+  { "slug": "notion", "name": "Notion", "category": "Data & docs", "description": "Wikis, client portals and task boards kept in sync with your workflows." },
+  { "slug": "airtable", "name": "Airtable", "category": "Data & docs", "description": "Structured client and campaign data your automations can read and update." },
+  { "slug": "supabase", "name": "Supabase", "category": "Data & docs", "description": "A Postgres database for workflows that outgrow spreadsheets." }
+]

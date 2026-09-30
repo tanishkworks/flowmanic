@@ -1,0 +1,85 @@
+# Full production stack on one host:
+#   nginx (load balancer, gzip, caching)  →  app1 / app2 / app3 (Next.js)  →  postgres + redis
+# Usage:  cp .env.example .env  &&  docker compose up -d --build
+name: flowmanic
+
+x-app: &app
+  build:
+    context: .
+    args:
+      NEXT_PUBLIC_SITE_URL: ${NEXT_PUBLIC_SITE_URL:-http://localhost}
+      NEXT_PUBLIC_CDN_URL: ${NEXT_PUBLIC_CDN_URL:-}
+      NEXT_PUBLIC_CONTACT_EMAIL: ${NEXT_PUBLIC_CONTACT_EMAIL:-hello@flowmanic.ai}
+      NEXT_PUBLIC_BOOKING_URL: ${NEXT_PUBLIC_BOOKING_URL:-}
+      NEXT_PUBLIC_LINKEDIN_URL: ${NEXT_PUBLIC_LINKEDIN_URL:-}
+      NEXT_PUBLIC_X_URL: ${NEXT_PUBLIC_X_URL:-}
+      NEXT_PUBLIC_PLAUSIBLE_DOMAIN: ${NEXT_PUBLIC_PLAUSIBLE_DOMAIN:-}
+  image: flowmanic-web:latest
+  restart: unless-stopped
+  environment:
+    DATABASE_URL: postgres://flowmanic:${POSTGRES_PASSWORD:-flowmanic}@postgres:5432/flowmanic
+    REDIS_URL: redis://redis:6379
+    PG_POOL_MAX: ${PG_POOL_MAX:-10}
+    DISABLE_NEXT_COMPRESSION: "true"   # nginx compresses instead
+    LEAD_WEBHOOK_URL: ${LEAD_WEBHOOK_URL:-}
+    SLACK_WEBHOOK_URL: ${SLACK_WEBHOOK_URL:-}
+    IP_HASH_SALT: ${IP_HASH_SALT:-change-me}
+    ADMIN_USER: ${ADMIN_USER:-admin}
+    ADMIN_PASSWORD: ${ADMIN_PASSWORD:-}
+  depends_on:
+    migrate: { condition: service_completed_successfully }
+    redis: { condition: service_healthy }
+
+services:
+  postgres:
+    image: postgres:16-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: flowmanic
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-flowmanic}
+      POSTGRES_DB: flowmanic
+    command: ["postgres", "-c", "max_connections=100", "-c", "shared_buffers=256MB"]
+    volumes: [pgdata:/var/lib/postgresql/data]
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U flowmanic -d flowmanic"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+
+  redis:
+    image: redis:7-alpine
+    restart: unless-stopped
+    command: ["redis-server", "--maxmemory", "128mb", "--maxmemory-policy", "allkeys-lru", "--save", ""]
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+
+  # One-shot: apply migrations + seed content, then exit
+  migrate:
+    image: flowmanic-web:latest
+    build: { context: . }
+    command: ["sh", "-c", "node scripts/migrate.mjs && node scripts/seed.mjs"]
+    environment:
+      DATABASE_URL: postgres://flowmanic:${POSTGRES_PASSWORD:-flowmanic}@postgres:5432/flowmanic
+    depends_on:
+      postgres: { condition: service_healthy }
+    restart: "no"
+
+  app1: *app
+  app2: *app
+  app3: *app
+
+  nginx:
+    image: nginx:1.27-alpine
+    restart: unless-stopped
+    ports: ["80:80"]
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+      - nginx_cache:/var/cache/nginx
+    depends_on: [app1, app2, app3]
+
+volumes:
+  pgdata:
+  nginx_cache:

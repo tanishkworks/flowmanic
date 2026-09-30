@@ -1,0 +1,112 @@
+[
+  {
+    "slug": "client-reporting",
+    "position": 1,
+    "name": "Client Reporting Automation",
+    "shortName": "Client Reporting",
+    "displayTop": "Client",
+    "displayBottom": "Reporting",
+    "summary": "Pulls your Meta Ads and Google Ads data every week, writes an AI-generated performance summary, and emails a polished HTML report directly to your client — without your team touching it.",
+    "setupPrice": "$1,500–2,500",
+    "monthlyPrice": "$300–500/month",
+    "badge": "Most popular",
+    "accent": "#22C55E",
+    "artBg": "#07090F",
+    "flow": ["Meta Ads", "Google Ads", "Claude AI", "Gmail", "Slack"],
+    "tools": ["meta-ads-api", "google-ads-api", "claude-ai", "gmail", "slack"],
+    "outcomes": [
+      "Meta Ads and Google Ads data pulled every week",
+      "An AI-written performance summary for each client",
+      "A polished HTML report emailed straight to your client",
+      "Your team notified in Slack, with zero manual steps"
+    ]
+  },
+  {
+    "slug": "ai-lead-follow-up",
+    "position": 2,
+    "name": "AI Lead Follow-Up System",
+    "shortName": "AI Lead Follow-Up",
+    "displayTop": "Lead",
+    "displayBottom": "Follow-up",
+    "summary": "New lead added to your sheet — they receive a personalized email in under 30 seconds. Day 3: follow-up. Day 7: breakup email. Reply comes in? Your team gets a Slack notification immediately.",
+    "setupPrice": "$1,800",
+    "monthlyPrice": "$350/month",
+    "badge": null,
+    "accent": "#8B5CF6",
+    "artBg": "#0B0712",
+    "flow": ["Google Sheets", "Claude AI", "Gmail", "Slack"],
+    "tools": ["google-sheets", "claude-ai", "gmail", "slack"],
+    "outcomes": [
+      "A personalized first email in under 30 seconds",
+      "A Day 3 follow-up, sent automatically",
+      "A Day 7 breakup email, sent automatically",
+      "A Slack notification the moment a lead replies"
+    ]
+  },
+  {
+    "slug": "content-repurposing",
+    "position": 3,
+    "name": "Content Repurposing Pipeline",
+    "shortName": "Content Repurposing",
+    "displayTop": "Content",
+    "displayBottom": "Repurposing",
+    "summary": "Drop a YouTube URL. Get back 3 short video scripts, a Twitter thread, a LinkedIn post, a blog post outline, and 5 Instagram captions — all generated and saved to your Google Sheet automatically.",
+    "setupPrice": "from $1,000–1,500",
+    "monthlyPrice": null,
+    "badge": null,
+    "accent": "#EF4444",
+    "artBg": "#0E0707",
+    "flow": ["YouTube", "AI Transcript", "Claude AI", "Google Sheets"],
+    "tools": ["youtube", "ai-transcript", "claude-ai", "google-sheets"],
+    "outcomes": [
+      "3 short video scripts",
+      "A Twitter thread and a LinkedIn post",
+      "A blog post outline",
+      "5 Instagram captions, all saved to your Google Sheet"
+    ]
+  },
+  {
+    "slug": "client-onboarding",
+    "position": 4,
+    "name": "Client Onboarding Automation",
+    "shortName": "Client Onboarding",
+    "displayTop": "Client",
+    "displayBottom": "Onboarding",
+    "summary": "New client signed? Before you finish your coffee — welcome email sent, Drive folder created, tracking sheet added, checklist doc ready, and your team pinged on Slack. Zero manual steps.",
+    "setupPrice": "$2,000",
+    "monthlyPrice": "$400/month",
+    "badge": null,
+    "accent": "#06B6D4",
+    "artBg": "#05101A",
+    "flow": ["Trigger", "Gmail", "Google Drive", "Google Docs", "Google Sheets", "Slack"],
+    "tools": ["gmail", "google-drive", "google-docs", "google-sheets", "slack"],
+    "outcomes": [
+      "Welcome email sent",
+      "Drive folder created and tracking sheet added",
+      "Checklist doc ready",
+      "Your team pinged on Slack"
+    ]
+  },
+  {
+    "slug": "custom-automation",
+    "position": 5,
+    "name": "Custom Automation",
+    "shortName": "Custom Automation",
+    "displayTop": "Custom",
+    "displayBottom": "Automation",
+    "summary": "Have a workflow eating your team's time that isn't on this list? We scope it, price it, and build it. If it can be automated, we'll automate it.",
+    "setupPrice": "Scoped per project",
+    "monthlyPrice": null,
+    "badge": null,
+    "accent": "#0B54F7",
+    "artBg": "#09090F",
+    "flow": ["Any tools", "Any workflow", "Any output"],
+    "tools": [],
+    "outcomes": [
+      "We scope the workflow with you",
+      "We price it up front",
+      "We build it in your own accounts",
+      "If it can be automated, we'll automate it"
+    ]
+  }
+]
