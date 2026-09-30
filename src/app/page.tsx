@@ -12,7 +12,7 @@ export const revalidate = 3600;
 export default async function HomePage() {
   const systems = await getSystems();
   return (
-    <>
+    <div className="is-home-page">
       <PageHero
         top="Agency"
         bottom="Autopilot"
@@ -78,6 +78,6 @@ export default async function HomePage() {
 
       <Stack />
       <CtaBlock />
-    </>
+    </div>
   );
 }

@@ -594,3 +594,53 @@ html.lenis, html.lenis body { height: auto; }
   .cursor { display: none; }
 }
 @media (hover: none) { .cursor { display: none; } }
+
+/* ==========================================================================
+   STATIC SERVICES GRID & DISABLE CARD ANIMATIONS ON NON-HOME SCREENS
+   ========================================================================== */
+.services-static-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 480px), 1fr));
+  gap: 40px;
+  margin-top: 40px;
+}
+.services-static-grid .sys-card {
+  width: 100%;
+  margin-left: 0;
+}
+
+/* Remove card hover/transition/scroll animations on all pages EXCEPT home screen */
+main:not(:has(.is-home-page)) .sys-card,
+main:not(:has(.is-home-page)) .price-card,
+main:not(:has(.is-home-page)) .int-card,
+main:not(:has(.is-home-page)) .proof-card,
+main:not(:has(.is-home-page)) .diff-card,
+main:not(:has(.is-home-page)) .pain {
+  transition: none !important;
+  animation: none !important;
+  transform: none !important;
+}
+
+main:not(:has(.is-home-page)) .sys-art {
+  filter: none !important;
+  transition: none !important;
+  transform: none !important;
+  scale: 1 !important;
+}
+
+main:not(:has(.is-home-page)) .sys-card:hover .sys-art,
+main:not(:has(.is-home-page)) .sys-card:hover .sys-bar,
+main:not(:has(.is-home-page)) .pain:hover {
+  background: inherit !important;
+  color: inherit !important;
+  border-color: inherit !important;
+  scale: 1 !important;
+}
+
+main:not(:has(.is-home-page)) [data-reveal],
+main:not(:has(.is-home-page)) [data-stagger] > * {
+  opacity: 1 !important;
+  animation: none !important;
+  transform: none !important;
+}
+

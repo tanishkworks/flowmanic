@@ -1,6 +1,5 @@
 import type { Metadata } from 'next';
 import CtaBlock from '@/components/CtaBlock';
-import HorizontalScroll from '@/components/HorizontalScroll';
 import PageHero from '@/components/PageHero';
 import SystemCard from '@/components/SystemCard';
 import { getSystems } from '@/lib/repo';
@@ -14,7 +13,6 @@ export const metadata: Metadata = {
   alternates: { canonical: '/services' },
 };
 
-/** Replica of the reference "Work" page: exhibition hero, then a pinned horizontal gallery. */
 export default async function ServicesPage() {
   const systems = await getSystems();
   return (
@@ -26,22 +24,21 @@ export default async function ServicesPage() {
         meta={['What we automate', 'Vol. 01 / Flowmanic']}
         next="#gallery"
       />
-      <section id="gallery" aria-label="Automation systems">
-        <HorizontalScroll>
-          <div className="sys-panel">
+      <section className="section" id="gallery" aria-label="Automation systems">
+        <div className="wrap">
+          <div className="head" style={{ marginBottom: 48 }}>
             <p className="label">What we automate</p>
             <h2 className="h2">Five Systems That Put Your Agency On Autopilot.</h2>
-            <p className="lead">
+            <p className="lead" style={{ marginTop: 12 }}>
               Each one runs inside your own n8n, Make, or Zapier account and goes live within 14 days.
             </p>
-            <p className="sys-hint">
-              Scroll <span className="scroll-line" />
-            </p>
           </div>
-          {systems.map((s) => (
-            <SystemCard key={s.slug} system={s} />
-          ))}
-        </HorizontalScroll>
+          <div className="services-static-grid">
+            {systems.map((s) => (
+              <SystemCard key={s.slug} system={s} />
+            ))}
+          </div>
+        </div>
       </section>
       <CtaBlock />
     </>
