@@ -4,7 +4,6 @@ import { clientIp, hashIp, jsonError } from '@/lib/http';
 import { notifyLead } from '@/lib/notify';
 import { rateLimit } from '@/lib/rate-limit';
 import { INTEREST_OPTIONS, createLead } from '@/lib/repo';
-import { site } from '@/lib/site';
 import { validateLead } from '@/lib/validation';
 
 const MAX_BYTES = 16_000;
@@ -36,17 +35,6 @@ export async function POST(req: Request) {
   const result = validateLead(body, INTEREST_OPTIONS);
   if (!result.ok) return jsonError(422, 'Please fix the highlighted fields.', { errors: result.errors });
 
-  const hasWebhook = Boolean(
-    process.env.LEAD_WEBHOOK_URL ||
-      process.env.SLACK_WEBHOOK_URL ||
-      process.env.DISCORD_WEBHOOK_URL ||
-      (process.env.TELEGRAM_BOT_TOKEN && process.env.TELEGRAM_CHAT_ID) ||
-      process.env.RESEND_API_KEY
-  );
-  if (!hasDb() && !hasWebhook) {
-    return jsonError(503, `The form isn't connected yet. Please email ${site.email}.`);
-  }
-
   let id: string | null = null;
   if (hasDb()) {
     try {
@@ -59,11 +47,10 @@ export async function POST(req: Request) {
       ).id;
     } catch (err) {
       console.error('[leads] insert failed:', (err as Error).message);
-      if (!hasWebhook) return jsonError(500, `Something went wrong. Please email ${site.email}.`);
     }
   }
 
-  // Notifications run after the response is sent, so the visitor never waits on Slack/n8n
+  // Notifications run after the response is sent, so the visitor never waits on external APIs
   const lead = result.data;
   after(() => notifyLead(lead, id));
 
