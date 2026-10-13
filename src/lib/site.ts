@@ -2,7 +2,7 @@
 export const site = {
   name: 'Flowmanic',
   url: process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000',
-  email: process.env.NEXT_PUBLIC_CONTACT_EMAIL || 'tanishk@flowmanic.tech',
+  email: process.env.NEXT_PUBLIC_CONTACT_EMAIL || 'hello@flowmanic.tech',
   bookingUrl: process.env.NEXT_PUBLIC_BOOKING_URL || '',
   linkedinUrl: process.env.NEXT_PUBLIC_LINKEDIN_URL || '',
   xUrl: process.env.NEXT_PUBLIC_X_URL || '',

@@ -13,7 +13,7 @@ COPY --from=deps /app/node_modules ./node_modules
 COPY . .
 ARG NEXT_PUBLIC_SITE_URL=http://localhost
 ARG NEXT_PUBLIC_CDN_URL=
-ARG NEXT_PUBLIC_CONTACT_EMAIL=tanishk@flowmanic.tech
+ARG NEXT_PUBLIC_CONTACT_EMAIL=hello@flowmanic.tech
 ARG NEXT_PUBLIC_BOOKING_URL=
 ARG NEXT_PUBLIC_LINKEDIN_URL=
 ARG NEXT_PUBLIC_X_URL=
