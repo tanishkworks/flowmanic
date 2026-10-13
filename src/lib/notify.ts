@@ -20,7 +20,8 @@ export async function notifyLead(lead: LeadInput, id: string | null): Promise<vo
   const telegramToken = process.env.TELEGRAM_BOT_TOKEN;
   const telegramChatId = process.env.TELEGRAM_CHAT_ID;
   const resendApiKey = process.env.RESEND_API_KEY;
-  const notifyEmail = process.env.NOTIFICATION_EMAIL || 'tanishkproductivity@gmail.com';
+  const notifyEmail = process.env.NOTIFICATION_EMAIL || 'tanishk@flowmanic.tech';
+  const resendFrom = process.env.RESEND_FROM || 'Flowmanic Audits <tanishk@flowmanic.tech>';
 
   // 1. Resend Email via Resend SDK
   if (resendApiKey) {
@@ -28,7 +29,7 @@ export async function notifyLead(lead: LeadInput, id: string | null): Promise<vo
     jobs.push(
       resend.emails
         .send({
-          from: 'Flowmanic Audits <onboarding@resend.dev>',
+          from: resendFrom,
           to: [notifyEmail],
           subject: `⚡ New Free Audit Request: ${lead.name} (${lead.agency})`,
           html: `
