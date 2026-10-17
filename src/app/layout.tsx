@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://flowmanic.tech'),
   title: { default: 'Flowmanic — AI & n8n Workflow Automation Agency | flowmanic.tech', template: '%s | Flowmanic' },
   description:
-    'Flowmanic (flowmanic.tech) is a custom AI and n8n workflow automation agency led by Director Tanishk Dhakad and Web Designer Palak Dubey. We help marketing and digital agencies automate client reporting, lead follow-ups, and content repurposing. Request a free automation audit.',
+    'Flowmanic (flowmanic.tech) is a custom AI and n8n workflow automation agency. We help marketing and digital agencies automate client reporting, lead follow-ups, and content repurposing. Request a free automation audit.',
   applicationName: 'Flowmanic',
   keywords: [
     'Flowmanic',
@@ -30,16 +30,13 @@ export const metadata: Metadata = {
     'flowmanic.tech',
     'Flowmanic automation',
     'Flowmanic agency',
-    'Tanishk Dhakad',
-    'Palak Dubey',
     'n8n workflow automation agency',
     'AI automation for marketing agencies',
   ],
   authors: [
-    { name: 'Tanishk Dhakad', url: 'https://www.linkedin.com/in/tanishk-dhakad/' },
-    { name: 'Palak Dubey', url: 'https://www.linkedin.com/in/palakdubey0306/' },
+    { name: 'Flowmanic', url: 'https://flowmanic.tech' },
   ],
-  creator: 'Tanishk Dhakad',
+  creator: 'Flowmanic',
   publisher: 'Flowmanic',
   alternates: { canonical: '/' },
   robots: {
@@ -60,7 +57,7 @@ export const metadata: Metadata = {
     url: 'https://flowmanic.tech',
     title: 'Flowmanic — AI & n8n Workflow Automation Agency | flowmanic.tech',
     description:
-      'Flowmanic (flowmanic.tech) is a custom AI and n8n workflow automation agency led by Director Tanishk Dhakad and Web Designer Palak Dubey. Automate client reporting, lead follow-up, and content repurposing.',
+      'Flowmanic (flowmanic.tech) is a custom AI and n8n workflow automation agency. Automate client reporting, lead follow-up, and content repurposing.',
     images: [
       {
         url: '/og-image.png',
@@ -74,7 +71,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Flowmanic — AI & n8n Workflow Automation Agency | flowmanic.tech',
     description:
-      'Flowmanic (flowmanic.tech) is a custom AI and n8n workflow automation agency led by Director Tanishk Dhakad and Web Designer Palak Dubey.',
+      'Flowmanic (flowmanic.tech) is a custom AI and n8n workflow automation agency.',
     images: ['/og-image.png'],
     creator: '@flowmanic',
   },
@@ -105,41 +102,8 @@ const jsonLdGraph = {
         addressRegion: 'Madhya Pradesh',
         addressCountry: 'IN',
       },
-      founder: [
-        {
-          '@type': 'Person',
-          name: 'Tanishk Dhakad',
-          jobTitle: 'Director',
-          email: 'tanishk@flowmanic.tech',
-          image: 'https://flowmanic.tech/team/tanishk-dhakad.jpg',
-          worksFor: { '@id': 'https://flowmanic.tech/#organization' },
-          sameAs: ['https://www.linkedin.com/in/tanishk-dhakad/'],
-        },
-      ],
-      member: [
-        {
-          '@type': 'Person',
-          name: 'Tanishk Dhakad',
-          jobTitle: 'Director',
-          email: 'tanishk@flowmanic.tech',
-          image: 'https://flowmanic.tech/team/tanishk-dhakad.jpg',
-          worksFor: { '@id': 'https://flowmanic.tech/#organization' },
-          sameAs: ['https://www.linkedin.com/in/tanishk-dhakad/'],
-        },
-        {
-          '@type': 'Person',
-          name: 'Palak Dubey',
-          jobTitle: 'Web Designer',
-          email: 'palak@flowmanic.tech',
-          image: 'https://flowmanic.tech/team/palak-dubey.jpg',
-          worksFor: { '@id': 'https://flowmanic.tech/#organization' },
-          sameAs: ['https://www.linkedin.com/in/palakdubey0306/'],
-        },
-      ],
       sameAs: [
         'https://github.com/tanishkworks/flowmanic',
-        'https://www.linkedin.com/in/tanishk-dhakad/',
-        'https://www.linkedin.com/in/palakdubey0306/',
       ],
       knowsAbout: [
         'n8n Workflow Automation',

@@ -3,19 +3,18 @@ import { AboutNarrative } from '@/components/AboutNarrative';
 import CtaBlock from '@/components/CtaBlock';
 import PageHero from '@/components/PageHero';
 import { Differentiators, SectionHead, WhyGrid } from '@/components/Sections';
-import { TeamSection } from '@/components/TeamSection';
 
 export const revalidate = 86400;
 
 export const metadata: Metadata = {
-  title: 'About Us — Leadership, Story & Digital Architects | Flowmanic',
+  title: 'About Us — Mission, Story & Digital Architecture | Flowmanic',
   description:
-    'Flowmanic (flowmanic.tech) is a specialized AI & n8n automation agency founded by Director Tanishk Dhakad and Web Designer Palak Dubey. Discover our story, mission, and leadership team.',
+    'Flowmanic (flowmanic.tech) is a specialized AI & n8n automation agency. Discover our story, mission, and how we engineer autonomous agency systems.',
   alternates: { canonical: '/about' },
   openGraph: {
-    title: 'About Us — Leadership & Digital Architects | Flowmanic',
+    title: 'About Us — Mission & Digital Architecture | Flowmanic',
     description:
-      'Flowmanic (flowmanic.tech) is an AI & n8n automation agency led by Director Tanishk Dhakad and Web Designer Palak Dubey. Discover our story and digital architects.',
+      'Flowmanic (flowmanic.tech) is an AI & n8n automation agency engineering custom workflow systems for marketing agencies worldwide.',
     url: 'https://flowmanic.tech/about',
   },
 };
@@ -34,9 +33,6 @@ export default function AboutPage() {
 
       {/* Narrative & Story Blocks (Chapters 01.01, 01.02, 01.03) */}
       <AboutNarrative />
-
-      {/* Team & Leadership Layer */}
-      <TeamSection />
 
       {/* Why Flowmanic Grid */}
       <section className="section section--flush-top" id="why">

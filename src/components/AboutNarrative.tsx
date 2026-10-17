@@ -10,7 +10,7 @@ export function AboutNarrative() {
       num: '01.02',
       tag: 'CHAPTER 01.02',
       title: 'Why We Started Flowmanic',
-      body: 'Founded by Tanishk Dhakad alongside Palak Dubey, Flowmanic was created to replace fragile manual agency routines with custom, production-ready n8n and AI automation systems that run reliably in your own environment—with zero platform lock-in.',
+      body: 'Flowmanic was created to replace fragile manual agency routines with custom, production-ready n8n and AI automation systems that run reliably in your own environment—with zero platform lock-in.',
     },
     {
       num: '01.03',

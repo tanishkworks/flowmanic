@@ -40,7 +40,6 @@ export default function Footer() {
             <li><Link href="/pricing">Pricing</Link></li>
             <li><Link href="/integrations">Integrations</Link></li>
             <li><Link href="/about">About</Link></li>
-            <li><Link href="/team">Team</Link></li>
             <li><Link href="/contact">Contact</Link></li>
           </ul>
         </nav>
