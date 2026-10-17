@@ -4,7 +4,7 @@ export const site = {
   url: process.env.NEXT_PUBLIC_SITE_URL || 'https://flowmanic.tech',
   email: process.env.NEXT_PUBLIC_CONTACT_EMAIL || 'hello@flowmanic.tech',
   bookingUrl: process.env.NEXT_PUBLIC_BOOKING_URL || '',
-  linkedinUrl: process.env.NEXT_PUBLIC_LINKEDIN_URL || '',
+  linkedinUrl: process.env.NEXT_PUBLIC_LINKEDIN_URL || 'https://www.linkedin.com/company/flowmanic/',
   xUrl: process.env.NEXT_PUBLIC_X_URL || '',
   location: 'Indore, Madhya Pradesh, India',
   tagline: 'Custom AI & n8n Workflow Automation Agency for Marketing Agencies',

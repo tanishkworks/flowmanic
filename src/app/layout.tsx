@@ -104,6 +104,7 @@ const jsonLdGraph = {
       },
       sameAs: [
         'https://github.com/tanishkworks/flowmanic',
+        'https://www.linkedin.com/company/flowmanic/',
       ],
       knowsAbout: [
         'n8n Workflow Automation',

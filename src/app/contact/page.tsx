@@ -54,6 +54,11 @@ export default function ContactPage() {
                 Prefer email?
               </span>
               <a href={`mailto:${site.email}`}>{site.email}</a>
+              {site.linkedinUrl ? (
+                <a href={site.linkedinUrl} target="_blank" rel="noopener noreferrer">
+                  Flowmanic on LinkedIn ↗
+                </a>
+              ) : null}
               {site.bookingUrl ? (
                 <a href={site.bookingUrl} target="_blank" rel="noopener noreferrer">
                   Pick a time directly ↗
