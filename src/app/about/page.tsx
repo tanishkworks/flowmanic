@@ -1,34 +1,57 @@
 import type { Metadata } from 'next';
+import { AboutNarrative } from '@/components/AboutNarrative';
 import CtaBlock from '@/components/CtaBlock';
 import PageHero from '@/components/PageHero';
 import { Differentiators, EarlyResults, SectionHead, WhyGrid } from '@/components/Sections';
+import { TeamSection } from '@/components/TeamSection';
 
 export const revalidate = 86400;
 
 export const metadata: Metadata = {
-  title: 'About: Your Automation Team',
-  description: 'Flowmanic is an AI automation team that works exclusively with marketing agencies. Based in Indore, India, serving globally.',
+  title: 'About Us — Leadership, Story & Digital Architects | Flowmanic',
+  description:
+    'Flowmanic (flowmanic.tech) is a specialized AI & n8n automation agency founded by Director Tanishk Dhakad and Web Designer Palak Dubey. Discover our story, mission, and leadership team.',
   alternates: { canonical: '/about' },
+  openGraph: {
+    title: 'About Us — Leadership & Digital Architects | Flowmanic',
+    description:
+      'Flowmanic (flowmanic.tech) is an AI & n8n automation agency led by Director Tanishk Dhakad and Web Designer Palak Dubey. Discover our story and digital architects.',
+    url: 'https://flowmanic.tech/about',
+  },
 };
 
 export default function AboutPage() {
   return (
     <>
       <PageHero
-        top="Not a tool."
-        bottom="Your team."
-        title="We're not a software tool. We're your automation team."
-        meta={['Indore, India', 'Serving globally']}
+        top="Autonomous"
+        bottom="Execution"
+        title="Flowmanic Was Never Meant To Be Ordinary."
+        meta={['Indore, Madhya Pradesh, India', 'Serving agencies globally']}
         size="tall"
-        next="#why"
+        next="#story"
       />
-      <section className="section" id="why">
+
+      {/* Narrative & Story Blocks (Chapters 01.01, 01.02, 01.03) */}
+      <AboutNarrative />
+
+      {/* Team & Leadership Layer */}
+      <TeamSection />
+
+      {/* Why Flowmanic Grid */}
+      <section className="section section--flush-top" id="why">
         <div className="wrap">
-          <SectionHead label="Why Flowmanic" title="We're Not a Software Tool. We're Your Automation Team." />
+          <SectionHead
+            label="Why Flowmanic"
+            title="We're Not a Software Tool. We're Your Automation Team."
+            lead="No fragile Zapier chains or generic templates. We build custom production-ready systems tailored to how your agency works."
+          />
           <WhyGrid />
         </div>
       </section>
-      <section className="section section--flush-top">
+
+      {/* How We Work */}
+      <section className="section section--flush-top" id="how">
         <div className="wrap">
           <SectionHead
             label="How we work"
@@ -38,11 +61,14 @@ export default function AboutPage() {
           <Differentiators />
         </div>
       </section>
+
+      {/* Early Results / Note */}
       <section className="section section--rule" id="results">
         <div className="wrap">
           <EarlyResults />
         </div>
       </section>
+
       <CtaBlock />
     </>
   );

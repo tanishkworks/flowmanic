@@ -52,6 +52,15 @@ Or email our team directly at **[hello@flowmanic.tech](mailto:hello@flowmanic.te
 
 ---
 
+## 👥 Leadership & Digital Architects
+
+| Member | Role | Focus | Contact & Social |
+|---|---|---|---|
+| **Tanishk Dhakad** | **Director** | AI-First Automation Ecosystem, n8n Architecture & Autonomous AI Agents | [LinkedIn Profile ↗](https://www.linkedin.com/in/tanishk-dhakad/) · [tanishk@flowmanic.tech](mailto:tanishk@flowmanic.tech) |
+| **Palak Dubey** | **Web Designer** | Conversion Web Architecture, Interactive UI/UX & Digital Brand Systems | [LinkedIn Profile ↗](https://www.linkedin.com/in/palakdubey0306/) · [palak@flowmanic.tech](mailto:palak@flowmanic.tech) |
+
+---
+
 ## 🛠️ Codebase & Tech Stack
 
 This repository powers the official **Flowmanic** web application ([flowmanic.tech](https://flowmanic.tech)):

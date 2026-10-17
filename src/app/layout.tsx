@@ -22,22 +22,23 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://flowmanic.tech'),
   title: { default: 'Flowmanic — AI & n8n Workflow Automation Agency | flowmanic.tech', template: '%s | Flowmanic' },
   description:
-    'Flowmanic (flowmanic.tech) is an AI & n8n workflow automation agency that builds custom, done-for-you client reporting, instant lead triage, and content repurposing systems for marketing, advertising, and digital agencies.',
+    'Flowmanic (flowmanic.tech) is a custom AI and n8n workflow automation agency led by Director Tanishk Dhakad and Web Designer Palak Dubey. We help marketing and digital agencies automate client reporting, lead follow-ups, and content repurposing. Request a free automation audit.',
   applicationName: 'Flowmanic',
   keywords: [
     'Flowmanic',
     'Flowmanic Tech',
     'flowmanic.tech',
     'Flowmanic automation',
-    'n8n automation agency',
-    'AI workflow automation',
-    'marketing agency automation',
+    'Flowmanic agency',
     'Tanishk Dhakad',
     'Palak Dubey',
-    'n8n workflow automation',
-    'client reporting automation',
+    'n8n workflow automation agency',
+    'AI automation for marketing agencies',
   ],
-  authors: [{ name: 'Tanishk Dhakad', url: 'https://flowmanic.tech' }],
+  authors: [
+    { name: 'Tanishk Dhakad', url: 'https://www.linkedin.com/in/tanishk-dhakad/' },
+    { name: 'Palak Dubey', url: 'https://www.linkedin.com/in/palakdubey0306/' },
+  ],
   creator: 'Tanishk Dhakad',
   publisher: 'Flowmanic',
   alternates: { canonical: '/' },
@@ -59,7 +60,7 @@ export const metadata: Metadata = {
     url: 'https://flowmanic.tech',
     title: 'Flowmanic — AI & n8n Workflow Automation Agency | flowmanic.tech',
     description:
-      'Flowmanic (flowmanic.tech) builds custom, done-for-you AI & n8n workflow automations for marketing and digital agencies. Automate client reporting, instant lead follow-up, and content repurposing in under 14 days.',
+      'Flowmanic (flowmanic.tech) is a custom AI and n8n workflow automation agency led by Director Tanishk Dhakad and Web Designer Palak Dubey. Automate client reporting, lead follow-up, and content repurposing.',
     images: [
       {
         url: '/og-image.png',
@@ -73,7 +74,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Flowmanic — AI & n8n Workflow Automation Agency | flowmanic.tech',
     description:
-      'Flowmanic (flowmanic.tech) builds custom, done-for-you AI & n8n workflow automations for marketing and digital agencies.',
+      'Flowmanic (flowmanic.tech) is a custom AI and n8n workflow automation agency led by Director Tanishk Dhakad and Web Designer Palak Dubey.',
     images: ['/og-image.png'],
     creator: '@flowmanic',
   },
@@ -108,19 +109,35 @@ const jsonLdGraph = {
         {
           '@type': 'Person',
           name: 'Tanishk Dhakad',
-          jobTitle: 'Founder',
+          jobTitle: 'Director',
           email: 'tanishk@flowmanic.tech',
+          worksFor: { '@id': 'https://flowmanic.tech/#organization' },
+          sameAs: ['https://www.linkedin.com/in/tanishk-dhakad/'],
         },
       ],
-      employee: [
+      member: [
+        {
+          '@type': 'Person',
+          name: 'Tanishk Dhakad',
+          jobTitle: 'Director',
+          email: 'tanishk@flowmanic.tech',
+          worksFor: { '@id': 'https://flowmanic.tech/#organization' },
+          sameAs: ['https://www.linkedin.com/in/tanishk-dhakad/'],
+        },
         {
           '@type': 'Person',
           name: 'Palak Dubey',
-          jobTitle: 'Collaborator',
+          jobTitle: 'Web Designer',
           email: 'palak@flowmanic.tech',
+          worksFor: { '@id': 'https://flowmanic.tech/#organization' },
+          sameAs: ['https://www.linkedin.com/in/palakdubey0306/'],
         },
       ],
-      sameAs: ['https://github.com/tanishkworks/flowmanic'],
+      sameAs: [
+        'https://github.com/tanishkworks/flowmanic',
+        'https://www.linkedin.com/in/tanishk-dhakad/',
+        'https://www.linkedin.com/in/palakdubey0306/',
+      ],
       knowsAbout: [
         'n8n Workflow Automation',
         'AI Agent Development',
