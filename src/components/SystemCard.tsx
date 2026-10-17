@@ -25,7 +25,7 @@ export default function SystemCard({ system }: { system: System }) {
         <img
           className="sys-art"
           src={asset(`/art/${system.slug}.svg`)}
-          alt={`Illustration of the ${system.name} workflow`}
+          alt={`Flowmanic ${system.name} — AI & n8n workflow automation for marketing agencies`}
           width={1200}
           height={520}
           loading="lazy"

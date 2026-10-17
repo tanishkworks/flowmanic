@@ -19,27 +19,158 @@ const display = Archivo({ subsets: ['latin'], axes: ['wdth'], variable: '--font-
 const sans = Inter({ subsets: ['latin'], variable: '--font-sans', display: 'swap' });
 
 export const metadata: Metadata = {
-  metadataBase: new URL(site.url),
-  title: { default: 'Flowmanic | AI Automation for Marketing Agencies', template: '%s | Flowmanic' },
-  description: site.description,
+  metadataBase: new URL('https://flowmanic.tech'),
+  title: { default: 'Flowmanic — AI & n8n Workflow Automation Agency | flowmanic.tech', template: '%s | Flowmanic' },
+  description:
+    'Flowmanic (flowmanic.tech) is an AI & n8n workflow automation agency that builds custom, done-for-you client reporting, instant lead triage, and content repurposing systems for marketing, advertising, and digital agencies.',
   applicationName: 'Flowmanic',
-  openGraph: { type: 'website', siteName: 'Flowmanic', locale: 'en_US', url: '/' },
-  twitter: { card: 'summary_large_image' },
-  robots: { index: true, follow: true },
+  keywords: [
+    'Flowmanic',
+    'Flowmanic Tech',
+    'flowmanic.tech',
+    'Flowmanic automation',
+    'n8n automation agency',
+    'AI workflow automation',
+    'marketing agency automation',
+    'Tanishk Dhakad',
+    'Palak Dubey',
+    'n8n workflow automation',
+    'client reporting automation',
+  ],
+  authors: [{ name: 'Tanishk Dhakad', url: 'https://flowmanic.tech' }],
+  creator: 'Tanishk Dhakad',
+  publisher: 'Flowmanic',
   alternates: { canonical: '/' },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  openGraph: {
+    type: 'website',
+    siteName: 'Flowmanic',
+    locale: 'en_US',
+    url: 'https://flowmanic.tech',
+    title: 'Flowmanic — AI & n8n Workflow Automation Agency | flowmanic.tech',
+    description:
+      'Flowmanic (flowmanic.tech) builds custom, done-for-you AI & n8n workflow automations for marketing and digital agencies. Automate client reporting, instant lead follow-up, and content repurposing in under 14 days.',
+    images: [
+      {
+        url: '/og-image.png',
+        width: 1200,
+        height: 630,
+        alt: 'Flowmanic — AI & n8n Workflow Automation Agency | flowmanic.tech',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Flowmanic — AI & n8n Workflow Automation Agency | flowmanic.tech',
+    description:
+      'Flowmanic (flowmanic.tech) builds custom, done-for-you AI & n8n workflow automations for marketing and digital agencies.',
+    images: ['/og-image.png'],
+    creator: '@flowmanic',
+  },
+  icons: {
+    icon: '/icon.svg',
+    apple: '/logo.png',
+  },
 };
 
 export const viewport: Viewport = { themeColor: '#ffffff', width: 'device-width', initialScale: 1 };
 
-const orgJsonLd = {
+const jsonLdGraph = {
   '@context': 'https://schema.org',
-  '@type': 'ProfessionalService',
-  name: 'Flowmanic',
-  description: site.description,
-  url: site.url,
-  email: site.email,
-  areaServed: 'Worldwide',
-  address: { '@type': 'PostalAddress', addressLocality: 'Indore', addressCountry: 'IN' },
+  '@graph': [
+    {
+      '@type': ['Organization', 'ProfessionalService'],
+      '@id': 'https://flowmanic.tech/#organization',
+      name: 'Flowmanic',
+      alternateName: ['Flowmanic Tech', 'Flowmanic Automation Agency'],
+      url: 'https://flowmanic.tech/',
+      logo: 'https://flowmanic.tech/logo.png',
+      image: 'https://flowmanic.tech/og-image.png',
+      email: 'hello@flowmanic.tech',
+      priceRange: '$$',
+      address: {
+        '@type': 'PostalAddress',
+        addressLocality: 'Indore',
+        addressRegion: 'Madhya Pradesh',
+        addressCountry: 'IN',
+      },
+      founder: [
+        {
+          '@type': 'Person',
+          name: 'Tanishk Dhakad',
+          jobTitle: 'Founder',
+          email: 'tanishk@flowmanic.tech',
+        },
+      ],
+      employee: [
+        {
+          '@type': 'Person',
+          name: 'Palak Dubey',
+          jobTitle: 'Collaborator',
+          email: 'palak@flowmanic.tech',
+        },
+      ],
+      sameAs: ['https://github.com/tanishkworks/flowmanic'],
+      knowsAbout: [
+        'n8n Workflow Automation',
+        'AI Agent Development',
+        'Automated Client Reporting',
+        'Lead Follow-Up Automation',
+        'Content Repurposing Automation',
+        'Marketing Agency Operations',
+      ],
+    },
+    {
+      '@type': 'WebSite',
+      '@id': 'https://flowmanic.tech/#website',
+      url: 'https://flowmanic.tech/',
+      name: 'Flowmanic',
+      alternateName: 'Flowmanic Tech',
+      publisher: {
+        '@id': 'https://flowmanic.tech/#organization',
+      },
+    },
+    {
+      '@type': 'FAQPage',
+      '@id': 'https://flowmanic.tech/#faq',
+      mainEntity: [
+        {
+          '@type': 'Question',
+          name: 'What is Flowmanic?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Flowmanic (flowmanic.tech) is an AI and n8n workflow automation agency that builds custom, done-for-you business automations for marketing, advertising, and digital agencies.',
+          },
+        },
+        {
+          '@type': 'Question',
+          name: 'What workflows does Flowmanic automate for agencies?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Flowmanic automates end-to-end client performance reporting, instant multi-channel lead follow-ups, content repurposing pipelines, CRM synchronization, and custom n8n operational workflows.',
+          },
+        },
+        {
+          '@type': 'Question',
+          name: 'How can I get a free automation audit from Flowmanic?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'You can request a free 20-minute workflow and automation audit directly on flowmanic.tech or by emailing hello@flowmanic.tech.',
+          },
+        },
+      ],
+    },
+  ],
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {
@@ -57,7 +188,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <Dock systems={dockSystems} />
         <SmoothScroll />
         <RevealObserver />
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(orgJsonLd) }} />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdGraph) }} />
         <Analytics />
         <SpeedInsights />
         {process.env.NEXT_PUBLIC_PLAUSIBLE_DOMAIN ? (

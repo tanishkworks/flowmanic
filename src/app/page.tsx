@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import CtaBlock from '@/components/CtaBlock';
 import PageHero from '@/components/PageHero';
-import { Differentiators, Pains, SectionHead, SystemRows } from '@/components/Sections';
+import { Differentiators, FaqGrid, Pains, SectionHead, SystemRows } from '@/components/Sections';
 import Stack from '@/components/Stack';
 import StatementFill from '@/components/StatementFill';
 import { getSystems } from '@/lib/repo';
@@ -16,7 +16,7 @@ export default async function HomePage() {
       <PageHero
         top="Agency"
         bottom="Autopilot"
-        title="Flowmanic: AI automation that puts your marketing agency on autopilot"
+        title="Flowmanic — AI & n8n Workflow Automation Agency | flowmanic.tech"
         meta={['Done-for-you AI automation', 'For marketing agencies only']}
         next="#statement"
       />
@@ -77,6 +77,18 @@ export default async function HomePage() {
       </section>
 
       <Stack />
+
+      <section className="section section--flush-top" id="faq">
+        <div className="wrap">
+          <SectionHead
+            label="Frequently asked questions"
+            title="Common Questions About Flowmanic Automation."
+            lead="Everything you need to know about how Flowmanic automates agency workflows, reporting, and client operations."
+          />
+          <FaqGrid />
+        </div>
+      </section>
+
       <CtaBlock />
     </div>
   );

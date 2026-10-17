@@ -72,7 +72,7 @@ export default async function SystemPage({ params }: Params) {
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src={asset(`/art/${system.slug}.svg`)}
-                alt={`Illustration of the ${system.name} workflow`}
+                alt={`Flowmanic ${system.name} — AI & n8n workflow automation architecture`}
                 width={1200}
                 height={520}
                 loading="lazy"

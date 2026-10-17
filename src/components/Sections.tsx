@@ -172,3 +172,34 @@ export function SystemRows({ systems }: { systems: System[] }) {
     </ol>
   );
 }
+
+export function FaqGrid() {
+  const faqs = [
+    {
+      q: 'What is Flowmanic?',
+      a: 'Flowmanic (flowmanic.tech) is an AI and n8n workflow automation agency that builds custom, done-for-you business automations for marketing, advertising, and digital agencies.',
+    },
+    {
+      q: 'What workflows does Flowmanic automate for agencies?',
+      a: 'Flowmanic automates end-to-end client performance reporting, instant multi-channel lead follow-ups, content repurposing pipelines, CRM synchronization, and custom n8n operational workflows.',
+    },
+    {
+      q: 'How can I get a free automation audit from Flowmanic?',
+      a: 'You can request a free 20-minute workflow and automation audit directly on flowmanic.tech or by emailing hello@flowmanic.tech.',
+    },
+  ];
+
+  return (
+    <div className="pain-grid" data-stagger>
+      {faqs.map((faq, i) => (
+        <article className="pain" key={faq.q}>
+          <span className="pain-num" aria-hidden="true">
+            {String(i + 1).padStart(2, '0')}
+          </span>
+          <h3>{faq.q}</h3>
+          <p>{faq.a}</p>
+        </article>
+      ))}
+    </div>
+  );
+}

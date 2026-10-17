@@ -70,7 +70,7 @@ export default function Footer() {
         FLOWMANIC
       </div>
       <div className="footer-bottom">
-        <span>© {year} Flowmanic. Built with AI. Deployed with precision. No fluff.</span>
+        <span>© {year} Flowmanic (flowmanic.tech) — AI & n8n Workflow Automation Agency | <a href="mailto:hello@flowmanic.tech" style={{ color: 'inherit', textDecoration: 'underline' }}>hello@flowmanic.tech</a></span>
         <span>{site.location}</span>
       </div>
     </footer>

@@ -1,15 +1,15 @@
 /** Public site settings. NEXT_PUBLIC_* values are inlined at build time. */
 export const site = {
   name: 'Flowmanic',
-  url: process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000',
+  url: process.env.NEXT_PUBLIC_SITE_URL || 'https://flowmanic.tech',
   email: process.env.NEXT_PUBLIC_CONTACT_EMAIL || 'hello@flowmanic.tech',
   bookingUrl: process.env.NEXT_PUBLIC_BOOKING_URL || '',
   linkedinUrl: process.env.NEXT_PUBLIC_LINKEDIN_URL || '',
   xUrl: process.env.NEXT_PUBLIC_X_URL || '',
-  location: 'Indore, India',
-  tagline: 'AI Automation for Marketing Agencies',
+  location: 'Indore, Madhya Pradesh, India',
+  tagline: 'Custom AI & n8n Workflow Automation Agency for Marketing Agencies',
   description:
-    'Flowmanic builds done-for-you AI automation systems for marketing agencies: client reporting, lead follow-up, content repurposing and onboarding. Live in your own account in under 2 weeks.',
+    'Flowmanic (flowmanic.tech) is a B2B AI and n8n workflow automation agency building custom, done-for-you client reporting, instant lead triage, and content repurposing systems for marketing, advertising, and digital agencies.',
 } as const;
 
 /** Prefix public files (e.g. /art/*.svg) with the CDN host when one is configured. */
