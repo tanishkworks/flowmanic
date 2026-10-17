@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import Link from 'next/link';
 
 export type TeamMember = {
@@ -9,6 +10,7 @@ export type TeamMember = {
   bio: string;
   initials: string;
   accent: string;
+  photo: string;
 };
 
 export const TEAM_MEMBERS: TeamMember[] = [
@@ -21,6 +23,7 @@ export const TEAM_MEMBERS: TeamMember[] = [
     bio: "Leading Flowmanic's AI-first automation ecosystem—architecting custom n8n workflows, autonomous AI agents, and scalable operational systems that put digital and marketing agencies on autopilot.",
     initials: 'TD',
     accent: '#0B54F7',
+    photo: '/team/tanishk-dhakad.jpg',
   },
   {
     name: 'Palak Dubey',
@@ -31,6 +34,7 @@ export const TEAM_MEMBERS: TeamMember[] = [
     bio: 'Crafting high-converting web architectures, interactive user experiences, and cohesive visual systems that blend modern digital aesthetics with seamless automated execution.',
     initials: 'PD',
     accent: '#8B5CF6',
+    photo: '/team/palak-dubey.jpg',
   },
 ];
 
@@ -70,7 +74,20 @@ export function TeamSection() {
 
               <div className="team-avatar-row">
                 <div className="team-avatar" style={{ '--av-accent': member.accent } as React.CSSProperties}>
-                  <span className="team-initials">{member.initials}</span>
+                  <div className="team-avatar-frame">
+                    {member.photo ? (
+                      <Image
+                        src={member.photo}
+                        alt={`${member.name} — ${member.role} at Flowmanic`}
+                        width={80}
+                        height={80}
+                        className="team-avatar-img"
+                        priority
+                      />
+                    ) : (
+                      <span className="team-initials">{member.initials}</span>
+                    )}
+                  </div>
                   <span className="team-pulse" />
                 </div>
                 <div className="team-identity">

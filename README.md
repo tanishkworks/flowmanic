@@ -56,8 +56,8 @@ Or email our team directly at **[hello@flowmanic.tech](mailto:hello@flowmanic.te
 
 | Member | Role | Focus | Contact & Social |
 |---|---|---|---|
-| **Tanishk Dhakad** | **Director** | AI-First Automation Ecosystem, n8n Architecture & Autonomous AI Agents | [LinkedIn Profile ↗](https://www.linkedin.com/in/tanishk-dhakad/) · [tanishk@flowmanic.tech](mailto:tanishk@flowmanic.tech) |
-| **Palak Dubey** | **Web Designer** | Conversion Web Architecture, Interactive UI/UX & Digital Brand Systems | [LinkedIn Profile ↗](https://www.linkedin.com/in/palakdubey0306/) · [palak@flowmanic.tech](mailto:palak@flowmanic.tech) |
+| <img src="public/team/tanishk-dhakad.jpg" width="48" height="48" style="border-radius:50%" alt="Tanishk Dhakad" /><br/>**Tanishk Dhakad** | **Director** | AI-First Automation Ecosystem, n8n Architecture & Autonomous AI Agents | [LinkedIn Profile ↗](https://www.linkedin.com/in/tanishk-dhakad/) · [tanishk@flowmanic.tech](mailto:tanishk@flowmanic.tech) |
+| <img src="public/team/palak-dubey.jpg" width="48" height="48" style="border-radius:50%" alt="Palak Dubey" /><br/>**Palak Dubey** | **Web Designer** | Conversion Web Architecture, Interactive UI/UX & Digital Brand Systems | [LinkedIn Profile ↗](https://www.linkedin.com/in/palakdubey0306/) · [palak@flowmanic.tech](mailto:palak@flowmanic.tech) |
 
 ---
 
