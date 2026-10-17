@@ -118,34 +118,6 @@ export function PricingCards() {
   );
 }
 
-export function EarlyResults() {
-  return (
-    <div className="proof">
-      <div data-reveal>
-        <p className="label">What agencies say</p>
-        <h2 className="h2">Early Results Coming.</h2>
-      </div>
-      <figure className="proof-card" data-reveal>
-        <div className="proof-q" aria-hidden="true">
-          “
-        </div>
-        <blockquote>
-          <p>We&apos;re currently deploying with our first clients and will be publishing verified results shortly.</p>
-          <p>
-            If you want to be one of the first — we&apos;ll build your first automation and document the results
-            together.
-          </p>
-        </blockquote>
-        <figcaption className="proof-foot">
-          <span className="proof-by">The Flowmanic team · Indore, India</span>
-          <Link className="btn btn-black" href="/contact">
-            Be an Early Client →
-          </Link>
-        </figcaption>
-      </figure>
-    </div>
-  );
-}
 
 export function SystemRows({ systems }: { systems: System[] }) {
   return (

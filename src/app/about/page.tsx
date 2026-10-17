@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { AboutNarrative } from '@/components/AboutNarrative';
 import CtaBlock from '@/components/CtaBlock';
 import PageHero from '@/components/PageHero';
-import { Differentiators, EarlyResults, SectionHead, WhyGrid } from '@/components/Sections';
+import { Differentiators, SectionHead, WhyGrid } from '@/components/Sections';
 import { TeamSection } from '@/components/TeamSection';
 
 export const revalidate = 86400;
@@ -59,13 +59,6 @@ export default function AboutPage() {
             lead="Flowmanic designs, builds, and deploys custom AI automation systems tailored to how marketing agencies actually work. Not generic templates — systems built around your exact workflows."
           />
           <Differentiators />
-        </div>
-      </section>
-
-      {/* Early Results / Note */}
-      <section className="section section--rule" id="results">
-        <div className="wrap">
-          <EarlyResults />
         </div>
       </section>
 
