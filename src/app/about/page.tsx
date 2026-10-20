@@ -26,7 +26,7 @@ export default function AboutPage() {
         top="Autonomous"
         bottom="Execution"
         title="Flowmanic Was Never Meant To Be Ordinary."
-        meta={['Indore, Madhya Pradesh, India', 'Serving agencies globally']}
+        meta={['Remote & Autonomous', 'Serving agencies globally']}
         size="tall"
         next="#story"
       />

@@ -64,7 +64,7 @@ export default function ContactPage() {
                   Pick a time directly ↗
                 </a>
               ) : null}
-              <span style={{ marginTop: 12 }}>{site.location} · Serving globally</span>
+              <span style={{ marginTop: 12 }}>{site.location}</span>
             </div>
           </aside>
         </div>

@@ -3,7 +3,7 @@
 > **Official Website:** [https://flowmanic.tech](https://flowmanic.tech)  
 > **Contact Email:** [hello@flowmanic.tech](mailto:hello@flowmanic.tech) | [tanishk@flowmanic.tech](mailto:tanishk@flowmanic.tech)  
 > **GitHub:** [tanishkworks/flowmanic](https://github.com/tanishkworks/flowmanic)  
-> **Primary Location:** Indore, Madhya Pradesh, India (Serving B2B marketing & digital agencies globally)
+> **Primary Location:** Remote · Global (Serving B2B marketing & digital agencies worldwide)
 
 ---
 
@@ -112,4 +112,4 @@ npm run build
 ## 📄 License & Attribution
 
 © 2026 **Flowmanic** ([flowmanic.tech](https://flowmanic.tech)). All rights reserved.  
-Created by **Tanishk Dhakad** ([@tanishkworks](https://github.com/tanishkworks)) & the Flowmanic team in Indore, Madhya Pradesh, India.
+Created by **Tanishk Dhakad** ([@tanishkworks](https://github.com/tanishkworks)) & the Flowmanic team.

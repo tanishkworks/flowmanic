@@ -16,7 +16,7 @@ export default function Footer() {
           <p>
             {site.tagline}
             <br />
-            {site.location} · Serving globally
+            {site.location}
           </p>
           <div className="socials">
             {site.linkedinUrl ? (

@@ -98,8 +98,6 @@ const jsonLdGraph = {
       priceRange: '$$',
       address: {
         '@type': 'PostalAddress',
-        addressLocality: 'Indore',
-        addressRegion: 'Madhya Pradesh',
         addressCountry: 'IN',
       },
       sameAs: [
@@ -188,3 +186,4 @@ export default function RootLayout({ children }: { children: ReactNode }) {
     </html>
   );
 }
+

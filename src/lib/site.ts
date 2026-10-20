@@ -6,7 +6,7 @@ export const site = {
   bookingUrl: process.env.NEXT_PUBLIC_BOOKING_URL || '',
   linkedinUrl: process.env.NEXT_PUBLIC_LINKEDIN_URL || 'https://www.linkedin.com/company/flowmanic/',
   xUrl: process.env.NEXT_PUBLIC_X_URL || '',
-  location: 'Indore, Madhya Pradesh, India',
+  location: 'Remote · Serving Globally',
   tagline: 'Custom AI & n8n Workflow Automation Agency for Marketing Agencies',
   description:
     'Flowmanic (flowmanic.tech) is a B2B AI and n8n workflow automation agency building custom, done-for-you client reporting, instant lead triage, and content repurposing systems for marketing, advertising, and digital agencies.',
