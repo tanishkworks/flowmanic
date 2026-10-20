@@ -11,7 +11,6 @@ export default function Footer() {
         <div className="footer-about">
           <Link className="brand" href="/" aria-label="Flowmanic home">
             <BrandMark />
-            <span className="brand-name">FLOWMANIC</span>
           </Link>
           <p>
             {site.tagline}

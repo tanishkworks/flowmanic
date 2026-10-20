@@ -62,7 +62,6 @@ export default function Nav() {
         <div className="nav-inner">
           <Link className="brand" href="/" aria-label="Flowmanic home">
             <BrandMark />
-            <span className="brand-name">FLOWMANIC</span>
           </Link>
           <nav className="nav-primary" aria-label="Primary">
             <div className="nav-links">
@@ -109,3 +108,4 @@ export default function Nav() {
     </>
   );
 }
+

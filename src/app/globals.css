@@ -104,6 +104,8 @@ html.lenis, html.lenis body { height: auto; }
 .nav.scrolled .nav-inner::before { opacity: 0; }
 .brand { justify-self: start; display: inline-flex; align-items: center; gap: 12px; text-decoration: none; color: #000; }
 .brand-mark { width: 28px; height: 28px; flex: none; }
+.brand-logo { height: 32px; width: auto; object-fit: contain; display: block; transition: height 0.3s ease; }
+.nav.scrolled .brand-logo { height: 26px; }
 .brand-name { font-family: var(--display); font-stretch: 125%; font-variation-settings: 'wdth' 125; font-weight: 800; font-size: 19px; letter-spacing: 0.04em; line-height: 1; }
 .nav-links { position: relative; isolation: isolate; display: flex; align-items: center; gap: 30px; height: 44px; padding: 0 30px; }
 .nav-links::before {
